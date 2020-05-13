@@ -15,44 +15,26 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.security.PrivilegedAction;
-
-public class MainActivity extends AppCompatActivity {
-
+public class CreateUserActivity extends AppCompatActivity {
     private EditText editLogin, editSenha;
     private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_create_user);
 
         editLogin = findViewById(R.id.editLogin);
-        editSenha = findViewById(R.id.editSenha);
+        editSenha = findViewById((R.id.editSenha));
 
         mAuth = FirebaseAuth.getInstance();
     }
 
-    @Override
-    protected void onStart(){
-        super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
-    }
-
-    private void updateUI(FirebaseUser currentUser){
-        if (currentUser != null){
-            Intent dashboard = new Intent(MainActivity.this,DashActivity.class);
-            startActivity(dashboard);
-            finish();
-        }
-    }
-
-    public void entrar(View view){
+    public void registrar(View view) {
         String login = editLogin.getText().toString();
         String senha = editSenha.getText().toString();
 
-        mAuth.signInWithEmailAndPassword(login,senha)
+        mAuth.createUserWithEmailAndPassword(login,senha)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -60,16 +42,18 @@ public class MainActivity extends AppCompatActivity {
                             FirebaseUser user =mAuth.getCurrentUser();
                             updateUI(user);
                         }else{
-                            Toast.makeText(MainActivity.this,"Falha ao Autenticar.",Toast.LENGTH_SHORT);
+                            Toast.makeText(CreateUserActivity.this,"Falha ao criar novo usuário.",Toast.LENGTH_SHORT);
                             updateUI(null);
                         }
                     }
                 });
     }
 
-    public void novoUsuario(View view) {
-        Intent novousuario = new Intent(MainActivity.this,CreateUserActivity.class);
-        startActivity(novousuario);
-        finish();
+    private void updateUI(FirebaseUser user) {
+        if (user != null){
+            Intent dashboard = new Intent(CreateUserActivity.this,DashActivity.class);
+            startActivity(dashboard);
+            finish();
+        }
     }
 }

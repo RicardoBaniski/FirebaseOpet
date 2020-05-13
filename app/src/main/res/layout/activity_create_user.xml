@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".CreateUserActivity">
 
     <EditText
         android:id="@+id/editLogin"
         android:hint="Digite o Login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
     <EditText
         android:id="@+id/editSenha"
         android:hint="Digite a Senha"
@@ -19,13 +20,8 @@
         android:layout_height="wrap_content"/>
 
     <Button
-        android:text="ENTRAR"
-        android:onClick="entrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:text="REGISTRAR"
-        android:onClick="novoUsuario"
+        android:text="registrar"
+        android:onClick="registrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
