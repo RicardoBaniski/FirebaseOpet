@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "792184565727",
+    "firebase_url": "https://fir-opet-53b97.firebaseio.com",
+    "project_id": "fir-opet-53b97",
+    "storage_bucket": "fir-opet-53b97.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:792184565727:android:7b2d5b6d7672ab7f41de6a",
+        "android_client_info": {
+          "package_name": "com.example.firebaseopet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "792184565727-69pf7aoc9d2f5iidr1j85seg31k2p8vo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUpXSNy51AQhQPL69Mu4hOOIcQTOjf8z0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "792184565727-69pf7aoc9d2f5iidr1j85seg31k2p8vo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
