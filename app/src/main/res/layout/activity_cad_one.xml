@@ -5,30 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".CadOneActivity">
 
     <EditText
-        android:id="@+id/editLogin"
-        android:hint="Digite o Login"
+        android:id="@+id/editNome"
+        android:textSize="20sp"
+        android:hint="Digite seu nome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-
     <EditText
-        android:id="@+id/editSenha"
-        android:hint="Digite a Senha"
+        android:id="@+id/editEndereco"
+        android:textSize="20sp"
+        android:hint="Digite seu endereço"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/editTelefone"
+        android:textSize="20sp"
+        android:hint="Digite seu telefone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <Button
-        android:text="ENTRAR"
-        android:onClick="entrar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <Button
-        android:text="REGISTRAR"
-        android:onClick="novoUsuario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:onClick="salvarnofirebase"
+        android:text="salvar" />
 
 </LinearLayout>

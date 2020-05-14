@@ -5,29 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".CadTwoActivity">
 
     <EditText
-        android:id="@+id/editLogin"
-        android:hint="Digite o Login"
+        android:id="@+id/editTitulo"
+        android:hint="Digite o Título"
+        android:textSize="20sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <EditText
-        android:id="@+id/editSenha"
-        android:hint="Digite a Senha"
+        android:id="@+id/editDescricao"
+        android:hint="Digite a Descrição"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/editValor"
+        android:hint="Digite o Valor"
+        android:inputType="numberDecimal"
+        android:textSize="20sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <Button
-        android:text="ENTRAR"
-        android:onClick="entrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <Button
-        android:text="REGISTRAR"
-        android:onClick="novoUsuario"
+        android:onClick="registrardadosvenda"
+        android:text="Salvar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
