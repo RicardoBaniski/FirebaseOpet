@@ -26,9 +26,27 @@
         android:layout_height="wrap_content"/>
 
     <Button
+        android:onClick="gerardadosnofirebase"
+        android:text="Gerar Dados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="sair"
         android:text="SAIR" />
+
+    <Button
+        android:onClick="carregardados"
+        android:text="Carregar Dados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textSize="20sp"
+        android:id="@+id/textResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
