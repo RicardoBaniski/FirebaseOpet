@@ -3,7 +3,9 @@ package com.example.firebaseopet;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -25,6 +27,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
+
+import javax.annotation.Nullable;
 
 public class DashActivity extends AppCompatActivity {
 
@@ -99,5 +103,10 @@ public class DashActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    public void uploadActivity(View view) {
+        Intent novajanela = new Intent(DashActivity.this,ImageActivity.class);
+        startActivity(novajanela);
     }
 }
