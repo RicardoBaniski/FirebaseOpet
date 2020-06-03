@@ -69,19 +69,21 @@ public class ImageActivity extends AppCompatActivity {
     public void uploadFile(View view) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String userPath = "images/" + user.getUid() + "/";
-        StorageReference imageRef = storageReference.child(userPath + "image_"+Util.getTimeStamp()+".png");
+        final StorageReference imageRef = storageReference.child(userPath + "image_"+Util.getTimeStamp()+".png");
 
-        UploadTask task =  imageRef.putFile(Uri.fromFile(imageFile));
+        final UploadTask task =  imageRef.putFile(Uri.fromFile(imageFile));
 
         task.addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(ImageActivity.this, "Falha no Upload da imagem", Toast.LENGTH_SHORT).show();
+                String message = "Falha no Upload da imagem";
+                Toast.makeText(ImageActivity.this, message, Toast.LENGTH_SHORT).show();
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Toast.makeText(ImageActivity.this, "Upload feito!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ImageActivity.this, imageRef.getDownloadUrl().toString(), Toast.LENGTH_SHORT).show();
+                //imageRef.getDownloadUrl();
             }
         });
     }
